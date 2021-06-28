@@ -31,7 +31,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const indexRouter = require('./routes/index.routes');
 app.use('/', indexRouter);
 
-const booksRouter = require('./routes/book.routes');
+const booksRouter = require('./routes/book.routes');//**1 use this router for everything that starts with /books **1
 app.use('/books', booksRouter);
 
 module.exports = app;

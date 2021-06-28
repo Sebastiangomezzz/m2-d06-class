@@ -14,7 +14,7 @@ const Book = require('../models/Book.model');
 // require database configuration
 require('../configs/db.config');
 
-const books = [
+const books = [//seed data
   {
     title: 'The Hunger Games',
     description:
@@ -87,7 +87,7 @@ const books = [
   }
 ];
 
-Book.create(books)
+Book.insertMany(books)
   .then(booksFromDB => {
     console.log(`Created ${booksFromDB.length} books`);
     mongoose.connection.close();
