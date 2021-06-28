@@ -87,6 +87,12 @@ const books = [//seed data
   }
 ];
 
+
+Book.deleteMany()
+.then(deletedBooks => {
+  console.log(`Deleted ${deletedBooks} books`);
+})
+.then(
 Book.insertMany(books)
   .then(booksFromDB => {
     console.log(`Created ${booksFromDB.length} books`);
@@ -94,4 +100,4 @@ Book.insertMany(books)
   })
   .catch(err =>
     console.log(`An error occurred while getting books from the DB: ${err}`)
-  );
+  ))
